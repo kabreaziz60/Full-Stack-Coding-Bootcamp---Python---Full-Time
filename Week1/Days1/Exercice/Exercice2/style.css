@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+    color: rgb(16, 13, 13);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+
+header{
+    background-color: rgb(225, 220, 220);
+    font-size: 100px;
+    color: black;
+    display: flex;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    /* margin-bottom: 5px; */
+}
+
+
+
+.star{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    float: left;
+    margin-top: 12px;
+    margin-left: 75px;
+    color: black;
+    
+}
+
+.sign{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    float: right;
+    margin-top: 12px;
+    margin-right: 75px;
+    background-color: blue;
+    border: none;
+    border-radius: 3px;
+    
+}
+
+
+
+section{
+    background-image: url(https://images.pexels.com/photos/37403/bora-bora-french-polynesia-sunset-ocean.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+/* .milieux{
+    display: contents;
+    justify-content: center;
+    align-items: center;
+} */
+
+.p1{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+input{
+    width: 450px;
+    height: 150%;
+    border: none;
+    border-radius: 3px;
+}
+
+
+.button2{
+    background-color: blue;
+    border: none;
+    border-radius: 3px;
+    width: 100px;
+    height: 150%;
+    margin-left: 10px;
+}
+
+
+
+
+footer{
+    height: 200px;
+    background-color: rgb(210, 206, 206);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.a, .b, .c{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.b{
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+h2{
+    margin-bottom: 1px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+i{
+    font-size: 70px;
+    color: rgb(50, 37, 233);
+}
+
+.t{
+    font-size: 18px;
+    margin-top: 5px;
+}
