@@ -1,0 +1,21 @@
+header{
+    display: inline;
+}
+
+
+
+nav{
+    background-color: black;
+    height: 50px;
+    
+}
+
+i{
+    font-size: 40px;
+    color: white;
+    margin-right: 1150px;
+}
+a{
+    font-size: 25px;
+    font-weight: bold;
+}

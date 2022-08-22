@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.container{
+    display: flex;
+    
+}
+
+
+.label{
+    display: inline;
+
+}
+
+.conexion{
+    background-color: rgb(85, 2, 68);
+    padding: 8px;
+    width: 300px;
+
+}
+
+
+
+.insertion{
+    background-color: gray;
+    justify-content: center;
+    justify-items: center;
+    padding: 100px 80px;
+    width: 200px;
+    height: 220px;
+}
+
+.Samis{
+    background-color: rgb(85, 2, 68);
+    justify-content: center;
+    justify-items: center;
+    padding: 100px 80px;
+    width: 200px;
+    height: 220px;
+    color: white;
+
+}
+
+button{
+    /*display: flex;
+    justify-content: center;
+    justify-items: center;*/
+    float: left;
+    padding: 10px;
+    border-radius: 20px;
+    width: 400px;
+
+}
