@@ -10,7 +10,7 @@ body{
 header{
     display: flex;
     flex-direction: row;
-    border-bottom: 2px solid black;
+    border-bottom: 5px solid gray;
     padding-left: 35px;
 }
 /* mettre l'image a doitr */
@@ -41,13 +41,14 @@ span{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
 .contact{
     
     width: 100%;
-    margin-right: 15%;
+    margin-right: 10%;
+    border-right: 12px solid gray;
 }
 h2{
     font-size: 30px;
@@ -79,5 +80,9 @@ p{
     margin-top: 2px;
     margin-bottom: 5px;
 
+}
+
+i{
+    color: yellow;
 }
 
