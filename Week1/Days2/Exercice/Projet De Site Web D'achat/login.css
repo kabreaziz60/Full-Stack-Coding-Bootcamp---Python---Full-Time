@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+
+section{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+fieldset{
+    border: 4px solid rgb(65, 138, 227);
+    width: 80px;
+    background-color: rgb(225, 221, 221);
+}
+
+.divG{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.b1{
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+    background-color: red;
+    color: white;
+}
+
+.b2{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(42, 210, 151);
+    color: white;
+}
