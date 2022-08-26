@@ -5,9 +5,7 @@
 // Écrivez un code Javascript simple qui rejoindra tous les éléments du tableau ci-dessus, et console.log le résultat.
 
 
-let sentence = ["my","favorite","color","is","blue"];
+let  sentence = ["my","favorite","color","is","blue"];
+let resultat = sentence.toString();
 
-for(i==0; i< sentence.length; i+1){
-    var resultar=console.log([i]);
-
-}
+console.log(resultat); 
