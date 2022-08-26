@@ -17,7 +17,7 @@ let myWatchedSeriesLength = myWatchedSeries.length;
 let myWatchedSeriesSentence = myWatchedSeries.toString();
 console.log(myWatchedSeriesSentence);
 
-console.log("I watched" + myWatchedSeriesLength + "series"+ " "+myWatchedSeriesSentence);
+console.log("I watched" + myWatchedSeriesLength + "series :"+ " "+myWatchedSeriesSentence);
 
 
 // Partie II
@@ -31,8 +31,12 @@ console.log("I watched" + myWatchedSeriesLength + "series"+ " "+myWatchedSeriesS
 
 myWatchedSeries[2]="friends";
 myWatchedSeries.push("3femmes 1villages");
-myWatchedSeries.unshift({Naruto});
+myWatchedSeries.unshift("Naruto");
 myWatchedSeries.shift()
 console.log("la troisieme lettre de la serie"+myWatchedSeries[2]);
 console.log(myWatchedSeries);
+
+
+
+
 
