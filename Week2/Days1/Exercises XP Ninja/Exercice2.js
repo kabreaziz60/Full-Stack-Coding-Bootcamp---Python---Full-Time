@@ -15,11 +15,11 @@
 //              =somme+0;
 //         };
 
-var chaine =parseInt(prompt("enter", 0)); 
+var chaine =prompt("entre les nombrr :",0)
 let tab =chaine.split(',');
 let somme = 0;
-for(i==0; i<tab.length; i++){
-    somme=somme+tab[i];
+for(let i=0; i<tab.length; i++){
+    somme=somme+parseInt(tab[i])
 }
 console.log(somme)
 
