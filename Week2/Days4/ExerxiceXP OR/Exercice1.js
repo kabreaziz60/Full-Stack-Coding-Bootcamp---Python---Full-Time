@@ -13,4 +13,4 @@ function isBlank(chaine){
     }
 }
 
-console.log(isBlank(abc))
+console.log(isBlank())
