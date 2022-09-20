@@ -4,21 +4,23 @@
 # Demandez à l'utilisateur un seul caractère, stockez-le dans une variable appelée letter.
 # Bouclez dans la wordsliste et imprimez l'index de la première apparition de la lettervariable dans chaque mot de la liste.
 # Si la lettre n'existe pas dans l'un des mots, imprimez un message amical avec le mot et la lettre.
-print("---Début---")
+from operator import index
 
+
+print("--Début--")
+words = []
 for i in range(1,8) :
-    nom = input("nom")
+    nmb = input("Entrer un mot : ")
+    words.append(nmb)
+print(words)
+latter = input("Entrer un choiffre : ")
+print(latter)
+for i in words :
+    eleme = i
+    for j in eleme :
+        if latter == j :
+            print("lindex de ",j, "dans", eleme ,"est : ",eleme.index(j))
+        else :
+            print("aucun mot trouver")
 
 
-
-
-
-
-
-# letter = input("Entrer une lettre")
-# for j in words :
-#     nom = j
-# print(nom)
-    # for j in nom :s
-    #     if j == letter :
-    #         print(index(j))
