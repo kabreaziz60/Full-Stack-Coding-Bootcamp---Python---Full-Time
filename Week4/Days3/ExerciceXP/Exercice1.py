@@ -11,11 +11,8 @@ keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]
 list= []
 for cle in zip(keys,values):
-    #print(cle)
     list.append(cle)
     print(list)
     print(type(list))
-    #print(type(cle))
-    #print(list(cle))
  
 

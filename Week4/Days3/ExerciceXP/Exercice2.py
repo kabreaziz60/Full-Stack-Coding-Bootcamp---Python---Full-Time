@@ -35,7 +35,7 @@ for x,y in family.items():
 print("La somme totale que la famille doit payé:",somme,"$")
 familly={}
 nomcl = list(input("Entrer votre nom : "))
-print(nomcl.split())
+print(nomcl)
 agecl = input("Entrer Votre age :")
 print(agecl)
 for nom in nomcl :

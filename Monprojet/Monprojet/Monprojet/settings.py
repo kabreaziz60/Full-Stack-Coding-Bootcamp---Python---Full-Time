@@ -76,8 +76,13 @@ WSGI_APPLICATION = 'Monprojet.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_polls',
+        'USER': 'postgres',
+        'PASSWORD': 'Ouedraogo@6000',
+        'HOST': '127.0.0.1',
+        'PORT': '5432', 
+        #When you install PostgreSQL, the default port number is set to 5432.
     }
 }
 

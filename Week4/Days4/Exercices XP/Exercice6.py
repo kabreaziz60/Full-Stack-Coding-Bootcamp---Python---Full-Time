@@ -7,7 +7,6 @@
 # Appelez la fonction show_magicians()pour voir que la liste a bien été modifiée.
 print("---------Début---------")
 
-
 def show_magicians(name) :
     for nom in name :
         print(nom.title())

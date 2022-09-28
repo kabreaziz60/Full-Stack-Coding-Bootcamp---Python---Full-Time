@@ -5,7 +5,6 @@
 
 from random import randint, random
 
-
 print("---------Début---------")
 def number(nb) :
     if nb <= 100 and nb >= 1 :
