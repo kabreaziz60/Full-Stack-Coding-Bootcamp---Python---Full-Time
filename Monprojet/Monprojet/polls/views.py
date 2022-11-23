@@ -3,79 +3,114 @@ from unicodedata import name
 from django.shortcuts import render # this line is added automatically
 from django.http import HttpResponse # pass view information into the browser
 
-# takes a request, returns a response
 
-# Modifier 
+from .models import Person, Post    # import the models from polls/models.py
+
+person = Person.objects.filter(first_name="Maria", last_name = "Fez").first() 
+# get the first object because Person.objects.filter returns a QuerSet (ie. a list)
+
+
+
+def index(request):
+    context = {
+        'page_title' : "Homepage",
+        'user' : person
+    }
+    return render(request, 'posts/homepage.html', context)
+
+
+def posts(request):
+    context = {
+        'user' : person,
+# we retrieve the person variable (created outside of the function)
+        'page_title' : "Posts",
+        'posts' : Post.objects.filter(
+            author__first_name=person.first_name, 
+            author__last_name=person.last_name)
+    }
+
+    return render(request, 'posts/posts.html', context)
+
+
+# from .forms import ContactForm
+
 # def index(request):
-#     return HttpResponse("Hello, world. You're at the polls index.")
-# def liste(request) :
-#     return HttpResponse("<h1>Ceci est la liste </h1><br><ul><li>Poll 1</li><li>Poll 2</li><li>Poll 3</li></ul> ")
-
-# def index(request):
-
-#     user = {
-#         'first_name' : "John",
-#         'last_name' : "Doe",
-#         'site': "Developper Institut"
-#     } 
-
-#     subjects = [
-#         {
-#             'title' : "How to setup Django",
-#             'author': "Maria"
-#         },
-#         {
-#             'title' : "How to cake an amazing pie",
-#             'author' : "Chef Mark"
-#         },
-#         {
-#             'title' : "To day we learnent flask framwork",
-#             'author' : "Mr LENGANI"
-#         }
-#     ]
-
 #     context = {
-#         'user' : user,
-#         'subjects': subjects,
+#         'page_title' : "Homepage",
+#         'user' : person,
+#         'form' : ContactForm()
 #     }
 #     return render(request, 'posts/homepage.html', context)
 
 
-# suite 
+from .forms import ContactForm
 
+person = Person.objects.filter(first_name="Maria", last_name = "Fez").first()
 
-# from django.shortcuts import render
-
-user = {
-    'first_name' : "John",
-    'last_name' : "Doe"
-} 
-
-# index function renders homepage.html template
 def index(request):
     context = {
         'page_title' : "Homepage",
-        'user' : user,
+        'user' : person,
     }
+    # if the submit button was clicked
+    if request.method == 'POST':
+        # POST, generate form with data from the request
+        form = ContactForm(request.POST)
+        # check if it's valid:
+        if form.is_valid():
+            # get the value of the fields
+            form_name = form['name'].value
+            form_email = form['email'].value
+            form_comment = form['comment'].value
+            context['formInfo'] = [form_name,form_email,form_comment]
+            # render to a the same url, but with new data:
+            return render(request, 'posts/homepage.html', context)
+    else:
+        # GET, generate blank form
+        context['form'] = ContactForm()
     return render(request, 'posts/homepage.html', context)
 
-# posts function renders posts.html template
-def posts(request):
-    subjects = [
-        {
-            'title' : "How to setup Django",
-            'author': "Maria"
-        },
-        {
-            'title' : "How to cake an amazing pie",
-            'author' : "Chef Mark"
-        }
-    ]
 
+
+
+from .models import Person, Post
+from .forms import ContactForm
+
+person = Person.objects.filter(first_name="Maria", last_name = "Fez").first()
+
+def index(request):
     context = {
-        'page_title' : "Posts",
-        'user' : user,
-        'subjects': subjects
+        'page_title' : "Homepage",
+        'user' : person,
     }
 
-    return render(request, 'posts/posts.html', context)
+    if request.method == 'POST':
+
+        # POST, generate form with data from the request
+        form = ContactForm(request.POST)
+        # check if we get data
+        print("data", form.data)
+        # check if it's valid:
+        if form.is_valid():
+            form_name = form.cleaned_data['name']
+            form_email = form.cleaned_data['email']
+            form_comment = form.cleaned_data['comment']
+            context['formInfo'] = {
+                    'name' : form_name,
+                    'email': form_email,
+                    'comment': form_comment
+                }
+            context['btnFormHidden'] = True # To hide the button is the form is successfully submitted
+            # print the values to make sure their are correct
+            print(context['formInfo'])
+            return render(request, 'posts/homepage.html', context)
+        else:
+             # print the errors, just in case
+            print("---ERRORS---", form.errors)
+            context['form'] = form
+            return render(request, 'posts/homepage.html', context)
+
+    else:
+        # GET, generate blank form
+        context['form'] = ContactForm()
+    return render(request, 'posts/homepage.html', context)
