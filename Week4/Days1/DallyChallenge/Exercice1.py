@@ -41,3 +41,8 @@ random.shuffle(list)
 print(list)
 chaine = "".join(list)
 print(chaine)
+
+
+
+
+
